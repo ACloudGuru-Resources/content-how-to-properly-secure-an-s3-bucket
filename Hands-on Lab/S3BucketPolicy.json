@@ -1,8 +1,10 @@
 {
   "Version": "2012-10-17",
   "Statement": [
-    {
+    { 
+      "Sid": "GeneralUserListBucketPermissions",
       "Effect": "Allow",
+      "Principal": "*",
       "Action": [
         "s3:ListBucket"
       ],
@@ -17,7 +19,9 @@
       }
     },
     {
+      "Sid": "RestrictUsersToIndividualFolders",
       "Effect": "Allow",
+      "Principal": "*",
       "Action": [
         "s3:PutObject",
         "s3:GetObject"
@@ -33,7 +37,9 @@
       }
     },
     {
+      "Sid": "EnforceAES256EncryptionOnEncryptedFolder",
       "Effect": "Allow",
+      "Principal": "*",
       "Action": [
         "s3:PutObject"
       ],
